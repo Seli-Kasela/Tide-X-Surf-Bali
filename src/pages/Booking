@@ -1,0 +1,193 @@
+import { Calendar, Users, Phone, Mail, User } from "lucide-react";
+import { useState } from "react";
+
+export default function Booking() {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    lesson: "Private Beginner",
+    participants: 1,
+    date: "",
+    time: "",
+    message: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
+  ) => {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    alert("Booking submitted successfully!");
+
+    console.log(form);
+  };
+
+  return (
+    <main className="min-h-screen bg-slate-950 text-white">
+      <div className="mx-auto max-w-3xl px-6 py-12">
+
+        <header className="mb-10 text-center">
+          <h1 className="text-4xl font-bold">
+            Book Your Surf Lesson
+          </h1>
+
+          <p className="mt-3 text-slate-400">
+            Reserve your surf experience with TIDE X Surf Bali.
+          </p>
+        </header>
+
+        <form
+          onSubmit={handleSubmit}
+          className="space-y-6 rounded-3xl bg-slate-900 p-8 shadow-xl"
+        >
+          <div>
+            <label className="mb-2 flex items-center gap-2 text-sm">
+              <User size={18} />
+              Full Name
+            </label>
+
+            <input
+              className="w-full rounded-xl bg-slate-800 p-3 outline-none"
+              type="text"
+              name="name"
+              value={form.name}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          <div>
+            <label className="mb-2 flex items-center gap-2 text-sm">
+              <Mail size={18} />
+              Email
+            </label>
+
+            <input
+              className="w-full rounded-xl bg-slate-800 p-3 outline-none"
+              type="email"
+              name="email"
+              value={form.email}
+              onChange={handleChange}
+            />
+          </div>
+
+          <div>
+            <label className="mb-2 flex items-center gap-2 text-sm">
+              <Phone size={18} />
+              Phone / WhatsApp
+            </label>
+
+            <input
+              className="w-full rounded-xl bg-slate-800 p-3 outline-none"
+              type="text"
+              name="phone"
+              value={form.phone}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          <div>
+            <label className="mb-2 text-sm">
+              Lesson Type
+            </label>
+
+            <select
+              className="w-full rounded-xl bg-slate-800 p-3"
+              name="lesson"
+              value={form.lesson}
+              onChange={handleChange}
+            >
+              <option>Private Beginner</option>
+              <option>Semi Private</option>
+              <option>Group Lesson</option>
+              <option>Kids Lesson</option>
+              <option>Intermediate Coaching</option>
+              <option>Surf Guiding</option>
+            </select>
+          </div>
+
+          <div>
+            <label className="mb-2 flex items-center gap-2 text-sm">
+              <Users size={18} />
+              Participants
+            </label>
+
+            <input
+              className="w-full rounded-xl bg-slate-800 p-3"
+              type="number"
+              min="1"
+              name="participants"
+              value={form.participants}
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-2">
+
+            <div>
+              <label className="mb-2 flex items-center gap-2 text-sm">
+                <Calendar size={18} />
+                Date
+              </label>
+
+              <input
+                className="w-full rounded-xl bg-slate-800 p-3"
+                type="date"
+                name="date"
+                value={form.date}
+                onChange={handleChange}
+              />
+            </div>
+
+            <div>
+              <label className="mb-2 text-sm">
+                Time
+              </label>
+
+              <input
+                className="w-full rounded-xl bg-slate-800 p-3"
+                type="time"
+                name="time"
+                value={form.time}
+                onChange={handleChange}
+              />
+            </div>
+
+          </div>
+
+          <div>
+            <label className="mb-2 text-sm">
+              Notes
+            </label>
+
+            <textarea
+              className="h-32 w-full rounded-xl bg-slate-800 p-3 outline-none"
+              name="message"
+              value={form.message}
+              onChange={handleChange}
+            />
+          </div>
+
+          <button
+            type="submit"
+            className="w-full rounded-xl bg-cyan-500 py-4 text-lg font-bold text-slate-950 transition hover:bg-cyan-400"
+          >
+            Book Now
+          </button>
+        </form>
+
+      </div>
+    </main>
+  );
+}
