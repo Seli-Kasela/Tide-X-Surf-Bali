@@ -1,69 +1,55 @@
-# 🌊 TIDE X Surf Bali
+# Tide-X-Surf-Bali
 
-A modern surf forecasting and surf lesson platform for **Balangan Beach, Bali**.
+A modern web application for tracking tide and surf conditions in Bali.
 
 ## Features
 
-- 🌊 Live wave and swell conditions
-- 🌤 Weather forecast powered by Open-Meteo
-- 🌊 Marine forecast powered by Stormglass
-- 📈 7-day surf forecast
-- 🌅 Tide charts
-- 🏄 Surf lesson booking
-- 📍 Surf spot directory
-- 📰 Surf forecast articles
-- 📱 Mobile responsive design
-- ⚡ Fast React + Vite application
+- Real-time tide forecasts
+- Surf spot conditions
+- Dashboard with key metrics
+- Forecast predictions
 
-## Technology Stack
+## Getting Started
 
-- React + TypeScript
-- Vite
-- Tailwind CSS
-- TanStack Router
-- TanStack Query
-- Supabase
-- Base44
-- Stormglass API
-- Open-Meteo API
+### Prerequisites
+
+- Node.js 18+
+- npm or yarn
+
+### Installation
+
+```bash
+npm install
+```
+
+### Development
+
+```bash
+npm run dev
+```
+
+### Build
+
+```bash
+npm run build
+```
 
 ## Project Structure
 
-```
-src/
-components/
-pages/
-lib/
-supabase/
-functions/
-migrations/
-```
+- `/src` - Source code
+- `/src/pages` - Page components
+- `/src/components` - Reusable components
+- `/src/lib` - Utility functions
+- `/src/styles` - Styling files
+- `/supabase` - Supabase migrations and functions
+- `/docs` - Documentation
 
-## Data Sources
+## Tech Stack
 
-- Stormglass API (Marine Forecast)
-- Open-Meteo (Weather Forecast)
+- React with TypeScript
+- Vite
+- Supabase
 
-## Location
+## License
 
-**Balangan Beach, Bali**
-
-Latitude: **-8.7933801**
-
-Longitude: **115.1227102**
-
-## Roadmap
-
-- [ ] Live Dashboard
-- [ ] 7-Day Forecast
-- [ ] Surf Spot Directory
-- [ ] Booking System
-- [ ] Admin Dashboard
-- [ ] AI Surf Rating
-- [ ] PWA Support
-
----
-
-Built with ❤️ for surfers in Bali.
-
-**TIDE X Surf Bali**
+MIT
