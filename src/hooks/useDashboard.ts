@@ -62,3 +62,23 @@ export function useDashboard() {
     refresh: loadDashboard,
   };
 }
+
+import { useDashboard } from "@/hooks/useDashboard";
+
+export default function Dashboard() {
+  const { data, loading, error } = useDashboard();
+
+  if (loading) return <p>Loading...</p>;
+
+  if (error) return <p>{error}</p>;
+
+  return (
+    <div>
+      <h1>TIDE X Dashboard</h1>
+
+      <pre>
+        {JSON.stringify(data, null, 2)}
+      </pre>
+    </div>
+  );
+    }
